@@ -18,6 +18,24 @@ The design follows a common best-practice pattern:
 
 ## Components
 
+## IAM (Role-based access to EC2 instances)
+
+This project uses **AWS IAM Roles (Instance Profiles)** to grant EC2 instances secure, temporary credentials for accessing AWS services. This avoids storing long-lived AWS access keys on the instances.
+
+### Usage
+- **No static credentials on servers** (more secure than access keys in environment variables or config files)
+- **Least privilege** (instances only get the permissions they need)
+- **Automatic credential rotation** managed by AWS
+
+### Implementation
+- Create an **IAM Role** with **EC2** as the trusted entity (`ec2.amazonaws.com`).
+- Attach the role to the EC2 instance(s) using an **Instance Profile**.
+
+### Permissions
+The role includes permissions such as:
+- **CloudWatch Logs/Metrics** (send logs and metrics from the instance)
+
+
 ### Networking
 - **Region**
 - **VPC**
