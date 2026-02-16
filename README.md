@@ -1,5 +1,5 @@
 # Project-1-Scalable-Web-Application-with-ALB-and-Auto-Scaling
-# AWS 2-AZ Web Application Architecture (VPC + ASG + RDS + CloudWatch + SNS)
+# Overview
 
 This project documents a highly available AWS reference architecture deployed across **two Availability Zones**. It uses a **VPC** with **public** and **private** subnets, an **Auto Scaling Group (ASG)** for the application tier, **Amazon RDS** in a dedicated database subnet group, and **Amazon CloudWatch + SNS** for monitoring and alert notifications.
 
